@@ -12,19 +12,23 @@
 const accordionBtns = document.querySelectorAll(".accordion");
 
 accordionBtns.forEach((accordion) => {
+  // start when collapsed
+  accordion.setAttribute("aria-expanded", "false");
+
   accordion.onclick = function () {
     this.classList.toggle("is-open");
 
     let content = this.nextElementSibling;
-    console.log(content);
 
     if (content.style.maxHeight) {
-      //this is if the accordion is open
+      // accordion is closed
       content.style.maxHeight = null;
+      this.setAttribute("aria-expanded", "false"); 
     } else {
-      //if the accordion is currently closed
+      // accordion is closed now lets open it
       content.style.maxHeight = content.scrollHeight + "px";
-      console.log(content.style.maxHeight);
+      this.setAttribute("aria-expanded", "true"); 
     }
   };
 });
+

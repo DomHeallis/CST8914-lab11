@@ -1,9 +1,9 @@
-/* body {
+ body {
 	background-color: #6DC4F4;
 }h1 { 
      color:white;
  
-} */
+} 
 
 .container {
   width: 80%;
@@ -15,7 +15,7 @@ button.accordion {
   width: 100%;
   background-color: whitesmoke;
   border: none;
-
+  margin-bottom: 4px;
   text-align: left;
   padding: 15px 20px;
   font-size: 18px;
@@ -23,6 +23,11 @@ button.accordion {
   cursor: pointer;
   transition: background-color 0.2s linear;
 }
+button.accordion:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
 
 button.accordion:after {
   font-family: FontAwesome;
